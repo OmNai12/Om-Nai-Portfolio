@@ -20,7 +20,7 @@ const educationData = [
     location: "Nadiad, Gujarat, India",
     period: "2020 - 2024",
     status: "Completed",
-    description: "Graduated with honors in Computer Science and Engineering.",
+    description: "Graduated from one of the best university of the state of Gujarat, India.",
     achievements: [
       "GPA: 3.5/4.0",
       "Led multiple technical projects"
