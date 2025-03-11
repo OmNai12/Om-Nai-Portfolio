@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Om-Nai-Portfolio/static/css/main.390e2831.css",
-    "main.js": "/Om-Nai-Portfolio/static/js/main.c3c764d3.js",
+    "main.css": "/Om-Nai-Portfolio/static/css/main.3eccbc7d.css",
+    "main.js": "/Om-Nai-Portfolio/static/js/main.33a2196b.js",
     "static/js/453.ad6eb26e.chunk.js": "/Om-Nai-Portfolio/static/js/453.ad6eb26e.chunk.js",
     "index.html": "/Om-Nai-Portfolio/index.html",
-    "main.390e2831.css.map": "/Om-Nai-Portfolio/static/css/main.390e2831.css.map",
-    "main.c3c764d3.js.map": "/Om-Nai-Portfolio/static/js/main.c3c764d3.js.map",
+    "main.3eccbc7d.css.map": "/Om-Nai-Portfolio/static/css/main.3eccbc7d.css.map",
+    "main.33a2196b.js.map": "/Om-Nai-Portfolio/static/js/main.33a2196b.js.map",
     "453.ad6eb26e.chunk.js.map": "/Om-Nai-Portfolio/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.390e2831.css",
-    "static/js/main.c3c764d3.js"
+    "static/css/main.3eccbc7d.css",
+    "static/js/main.33a2196b.js"
   ]
 }
