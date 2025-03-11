@@ -1,61 +1,64 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const skillsData = {
   "Programming Languages": [
-    { name: "Python", image_path: "/assets/pl_lang_img/pl_py.png" },
-    { name: "Java", image_path: "/assets/pl_lang_img/pl_java.jpeg" },
-    { name: "JavaScript", image_path: "/assets/pl_lang_img/pl_js.png" },
-    { name: "TypeScript", image_path: "/assets/pl_lang_img/pl_ts.png" },
+    { name: "Python", image_path: "/assets/images/pl_lang_img/pl_py.png" },
+    { name: "Java", image_path: "/assets/images/pl_lang_img/pl_java.jpeg" },
+    { name: "JavaScript", image_path: "/assets/images/pl_lang_img/pl_js.png" },
+    { name: "TypeScript", image_path: "/assets/images/pl_lang_img/pl_ts.png" },
   ],
   "Web Development Frameworks and Libraries": [
-    { name: "React", image_path: "/assets/frameworks_img/fw_reactjs.png" },
-    { name: "Spring", image_path: "/assets/frameworks_img/fw_sw.png" },
-    { name: "Node.js", image_path: "/assets/frameworks_img/fw_nodejs.png" },
-    { name: "NestJS", image_path: "/assets/frameworks_img/fw_nestjs.png" },
-    { name: "ExpressJS", image_path: "/assets/frameworks_img/fw_expressjs.png" },
+    { name: "React", image_path: "/assets/images/frameworks_img/fw_reactjs.png" },
+    { name: "Spring", image_path: "/assets/images/frameworks_img/fw_sw.png" },
+    { name: "Node.js", image_path: "/assets/images/frameworks_img/fw_nodejs.png" },
+    { name: "NestJS", image_path: "/assets/images/frameworks_img/fw_nestjs.png" },
+    { name: "ExpressJS", image_path: "/assets/images/frameworks_img/fw_expressjs.png" },
   ],
   "Databases": [
-    { name: "MongoDB", image_path: "/assets/databases_img/db_mongo.png" },
-    { name: "OracleDB", image_path: "/assets/databases_img/db_oracle.webp" },
-    { name: "MySQL", image_path: "/assets/databases_img/db_mysql.png" },
-    { name: "PostgreSQL", image_path: "/assets/databases_img/db_postgresql.png" },
+    { name: "MongoDB", image_path: "/assets/images/databases_img/db_mongo.png" },
+    { name: "OracleDB", image_path: "/assets/images/databases_img/db_oracle.webp" },
+    { name: "MySQL", image_path: "/assets/images/databases_img/db_mysql.png" },
+    { name: "PostgreSQL", image_path: "/assets/images/databases_img/db_postgresql.png" },
   ],
   "Machine Learning Frameworks and Libraries": [
-    { name: "Scikit-learn", image_path: "/assets/machine_learning_img/ms_sk.png" },
-    { name: "TensorFlow", image_path: "/assets/machine_learning_img/ms_tf.png" },
-    { name: "Pytorch", image_path: "/assets/machine_learning_img/ms_pt.png" },
-    { name: "OpenCV", image_path: "/assets/machine_learning_img/ms_ocv.jpg" },
+    { name: "Scikit-learn", image_path: "/assets/images/machine_learning_img/ms_sk.png" },
+    { name: "TensorFlow", image_path: "/assets/images/machine_learning_img/ms_tf.png" },
+    { name: "Pytorch", image_path: "/assets/images/machine_learning_img/ms_pt.png" },
+    { name: "OpenCV", image_path: "/assets/images/machine_learning_img/ms_ocv.jpg" },
   ],
   "Some Other Tools": [
-    { name: "Git", image_path: "/assets/some_more_img/new_git.png" },
-    { name: "GitHub", image_path: "/assets/some_more_img/new_github.png" },
-    { name: "Docker", image_path: "/assets/some_more_img/new_docker.png" },
-    { name: "Hadoop", image_path: "/assets/some_more_img/new_hadoop.jpeg" },
-    { name: "Apache Spark", image_path: "/assets/some_more_img/new_a_spark.png" },
+    { name: "Git", image_path: "/assets/images/some_more_img/new_git.png" },
+    { name: "GitHub", image_path: "/assets/images/some_more_img/new_github.png" },
+    { name: "Docker", image_path: "/assets/images/some_more_img/new_docker.png" },
+    { name: "Hadoop", image_path: "/assets/images/some_more_img/new_hadoop.jpeg" },
+    { name: "Apache Spark", image_path: "/assets/images/some_more_img/new_a_spark.png" },
   ],
 };
 
-const SkillItem = ({ name, image_path }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5 }}
-    className="flex items-center gap-6 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-  >
-    <div className="w-16 h-16 flex-shrink-0 rounded-xl bg-gray-50 p-3 flex items-center justify-center overflow-hidden">
-      <img
-        src={image_path}
-        alt={name}
-        className="w-full h-full object-contain"
-        onError={(e) => {
-          e.target.src = '/images/placeholder.png';
-        }}
-      />
-    </div>
-    <span className="text-gray-700 font-medium text-lg">{name}</span>
-  </motion.div>
-);
+const SkillItem = ({ name, image_path }) => {
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex items-center gap-6 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+    >
+      <div className="w-16 h-16 flex-shrink-0 rounded-xl bg-gray-50 p-3 flex items-center justify-center overflow-hidden">
+        <img
+          src={process.env.PUBLIC_URL + image_path}
+          alt={name}
+          className={`w-full h-full object-contain ${imageError ? 'opacity-50' : ''}`}
+          onError={() => setImageError(true)}
+        />
+      </div>
+      <span className="text-gray-700 font-medium text-lg">{name}</span>
+    </motion.div>
+  );
+};
 
 const SkillCategory = ({ category, skills }) => (
   <motion.div
