@@ -64,14 +64,14 @@ const SkillCategory = ({ category, skills }) => (
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 px-4 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+    <section id="skills" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Skills & Technologies
           </h2>
-          <p className="text-gray-600 text-sm">
-            Technologies and tools I work with
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Crafting digital experiences with cutting-edge technologies. Here's my technical toolkit that brings ideas to life.
           </p>
         </div>
 

@@ -138,21 +138,17 @@ const ProjectCard = ({ project }) => (
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-16 px-4 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Featured Projects</h2>
-          <p className="text-gray-600 text-sm">
-            A collection of projects I've worked on
+    <section id="projects" className="bg-white py-20">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Showcasing innovative solutions and technical expertise through real-world applications.
           </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}

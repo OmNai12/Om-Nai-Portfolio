@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <div className="relative min-h-screen w-full">
       <Background />
-      {/* <Navbar /> */}
+      <Navbar />
       <main className="relative">
         {children}
       </main>

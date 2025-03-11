@@ -56,7 +56,7 @@ const ExperienceCard = ({ experience }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
-    className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 w-full"
+    className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 w-full min-h-[500px] flex flex-col"
   >
     {/* Type Badge */}
     <div className="absolute -top-3 right-6 px-6 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full">
@@ -82,17 +82,17 @@ const ExperienceCard = ({ experience }) => (
     <p className="text-gray-600 text-base mb-6">{experience.description}</p>
 
     {/* Responsibilities */}
-    <div className="space-y-3 mb-6">
+    <div className="space-y-3 mb-6 flex-grow">
       {experience.responsibilities.map((responsibility, index) => (
-        <div key={index} className="flex items-start gap-3 text-base">
-          <span className="text-blue-600 mt-1">→</span>
-          <span className="text-gray-600">{responsibility}</span>
+        <div key={index} className="flex items-start gap-3">
+          <span className="text-blue-600 mt-1.5 flex-shrink-0">→</span>
+          <span className="text-gray-600 text-base leading-relaxed">{responsibility}</span>
         </div>
       ))}
     </div>
 
     {/* Tags */}
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">
       {experience.tags.map((tag, index) => (
         <span
           key={index}
@@ -107,21 +107,18 @@ const ExperienceCard = ({ experience }) => (
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-16 px-4 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Professional Experience</h2>
-          <p className="text-gray-600 text-sm">
-            My journey through various roles and projects
+    <section id="experience" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Professional Experience
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Building impactful solutions and gaining valuable experience across diverse tech environments.
           </p>
-        </motion.div>
-
-        <div className="space-y-8">
+        </div>
+        
+        <div className="max-w-5xl mx-auto space-y-8">
           {experienceData.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
           ))}

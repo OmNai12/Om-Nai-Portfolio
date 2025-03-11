@@ -45,15 +45,16 @@ const EducationCard = ({ education, isLeft }) => (
       className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-sm hover:shadow-md transition-all w-full max-w-lg"
     >
       {/* Current/Completed Status Badge */}
-      <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 
+      <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 w-fit
         ${education.status === "Pursuing" 
-          ? "bg-blue-100 text-blue-700"
-          : "bg-green-100 text-green-700"}`}
+          ? "bg-gradient-to-r from-green-500 to-green-600 text-white"
+          : "bg-gradient-to-r from-blue-600 to-purple-600 text-white"}`}
+          
       >
         {education.status}
       </span>
 
-      <h3 className="text-xl font-bold text-gray-800 mb-1">{education.degree}</h3>
+      <h3 className="text-xl font-bold text-gray-800 mb-2">{education.degree}</h3>
       <div className="text-gray-600 mb-2">
         <p className="font-medium">{education.institution}</p>
         <p className="text-sm">{education.location} • {education.period}</p>
@@ -75,11 +76,15 @@ const EducationCard = ({ education, isLeft }) => (
 
 const Education = () => {
   return (
-    <section id="education" className="py-16 px-4">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Education</h2>
-          <p className="text-gray-600 text-sm">My academic journey and achievements</p>
+    <section id="education" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Educational Journey
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            A foundation of academic excellence and continuous learning, shaping my expertise in technology and innovation.
+          </p>
         </div>
 
         <div className="space-y-8">
