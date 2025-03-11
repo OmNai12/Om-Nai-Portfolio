@@ -1,44 +1,69 @@
 import { motion } from 'framer-motion';
-// import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projectsData = [
   {
-    title: "AI-Powered Task Management",
-    description: "A smart task management system that uses AI to prioritize and categorize tasks. Features include natural language processing for task input and intelligent task scheduling.",
+    title: "Hotel Check-In System",
+    description: "A full-stack web application build with the end to end automation of the hotel/motel check-in process.",
     type: "Personal Project",
     status: "Ongoing",
-    technologies: ["Python", "React", "FastAPI", "PostgreSQL", "Docker"],
+    technologies: ["Java", "Spring Boot", "React", "PostgreSQl", "Docker", "AWS", "Git and Github"],
     projectLink: "https://github.com/yourusername/ai-task-manager",
     highlights: [
-      "Implemented machine learning algorithms for task prioritization",
-      "Built RESTful API with FastAPI serving 1000+ requests daily",
-      "Achieved 90% accuracy in task categorization"
+      "The process is reliable and very efficient with zero down time and faster approximatly 55% then other similar category solution.",
+      "This targets small to mid level hotels and motels to automate their check-in process.",
+      "The application is build with the latest technologies and is very scalable and can be used by any size of the hotel/motel."
     ]
   },
   {
-    title: "E-Commerce Analytics Dashboard",
-    description: "An offline analytics dashboard for e-commerce platforms that provides insights into sales patterns, inventory management, and customer behavior.",
-    type: "Academic Project",
+    title: "Reinforcement Algorithms Compare and Contrast",
+    description: "A GUI based application which compares and contrasts the performance of the Reinforcement Algorithms on standard Grid World Problem.",
+    type: "Group Project",
     status: "Completed",
-    technologies: ["Java", "Spring Boot", "MySQL", "React", "Chart.js"],
-    projectLink: "https://github.com/yourusername/ecommerce-analytics",
+    technologies: ["Python", "TkInter", "Scikit Learn", "Git and Github"],
+    projectLink: "https://github.com/OmNai12/Q-Learning-Project",
     highlights: [
-      "Developed comprehensive reporting system with 15+ types of analytics",
-      "Implemented real-time data processing pipeline",
-      "Reduced report generation time by 60%"
+      "Project showcases the performance of the Reinforcement Algorithms on standard Grid World Problem.",
+      "Algorithms implemented are Q-Learning, Monte Carlo, Markovs Decision Process and Multi Armed Bandits.",
+      "The projects main focus was to implement the Q-Learning algorithm and compare its performance with the other algorithms. Which was successfully achieved."
     ]
   },
   {
-    title: "Portfolio Website",
-    description: "A modern portfolio website built with React and Tailwind CSS, featuring responsive design and smooth animations.",
+    title: "PepoleSoft UX Improvement",
+    description: "A proposed project to improve the UX of the PepoleSoft website (Used by California State University, Fresno) by implementing the latest technologies and best practices which provides a better User Experience to 25000+ users of California State University, Fresno.",
+    type: "Group Project - (Role : Facilitator)",
+    status: "Completed",
+    technologies: ["Figma", "ReactJS", "MongoDB", "Junit", "NodeJS", "Git and Github"],
+    projectLink: "https://github.com/yourusername/ai-task-manager",
+    highlights: [
+      "The project focuses on the improvement of the UX of the website which are potentially needed to be imporoved in the existing system.",
+      "Perform user testing and analysis to identify the pain points and areas for improvement. And later on developed a system which recive 95% positive feedback from the users.",
+      "The application proposed iprovides 70% better effeciency then the existing system."
+    ]
+  },
+  {
+    title: "Translator and OCR Reader",
+    description: "An online simple webtool which translates the input English language text, voice based input or an image to Gujarati and vice versa.",
+    type: "Group Academic Project - (Semester 6 - B.Tech)",
+    status: "Completed",
+    technologies: ["Python", "OpenCV", "Teseract", "PIL", "JavaScript", "Flask", "HTML", "CSS", "Bootstrap", "Git and Github"],
+    projectLink: "https://github.com/OmNai12/SDP---Project",
+    highlights: [
+      "OCR implemented based on the various image manipulation techniques and algorithms of Machine Leaning by implementation of the ANN.",
+      "Achived accuracy of 87% in OCR and 93% in translation.",
+      "Minimalistic UI with a simple and intuitive design along with ensurese users data safety."
+    ]
+  },
+  {
+    title: "Student Admin Portal",
+    description: "An admin portal for the management of the students of a school/college.",
     type: "Personal Project",
     status: "Completed",
-    technologies: ["React", "Tailwind CSS", "Framer Motion", "Responsive Design"],
-    projectLink: "https://your-portfolio.com",
+    technologies: ["C#", ".Net MVC", "Microsoft SQL Server", "Entity Framework", "Angular", "Git and Github"],
+    projectLink: "https://github.com/OmNai12/Student-Admin-Portal",
     highlights: [
-      "Implemented responsive design for all screen sizes",
-      "Added smooth animations and transitions",
-      "Optimized performance and accessibility"
+      "The portal provides a simple and intuitive interface for the admin to manage the students of a school/college.",
+      "The portal is build with the latest technologies and is very scalable and can be used by any size of the school/college.",
+      "System is provides relaible and secure way to manage the students of a school/college. With the feature of Outh2.0 for authentication."
     ]
   }
 ];

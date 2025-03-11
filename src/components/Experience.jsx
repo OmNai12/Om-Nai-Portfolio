@@ -24,12 +24,12 @@ const experienceData = [
     period: "Sept 2024 - Present",
     description: "Delivered end-to-end web applications for BAPS Swaminarayan Sanstha.",
     responsibilities: [
-      "Developed full-stack web applications using modern technologies",
-      "Implemented responsive and user-friendly interfaces",
-      "Created RESTful APIs and backend services",
-      "Managed database design and optimization"
+      "Developeing full-stack web applications which serves more the 10000+ clients on the daily bases of the region of North America",
+      "Working with cutting edge technologies to build interractive and user-friendly interfaces and reliable backend services",
+      "Testing and debugging the code to ensure high quality and performance",
+      "Deployment of the application on the cloud platform"
     ],
-    tags: ["Java", "Spring Boot", "React", "Microsoft SQL Server", "Docker", "Git and Github"]
+    tags: ["Java", "Spring Boot", "React", "Microsoft SQL Server", "Docker", "Git and Github", "AWS"]
   },
   {
     role: "Software Engineer Intern",
@@ -39,13 +39,14 @@ const experienceData = [
     period: "Dec 2023 - June 2024",
     description: "Worked on enterprise-level software development projects.",
     responsibilities: [
-      "Developed software for enterprise applications which are robust and scalable",
+      "Developed software for enterprise grade applications which are robust and scalable",
+      "Worked upon the automation based projcect which caters more then 5000+ clients on the daily bases",
+      "Improvement of existing code base system by 40% along with resolving 25+ bugs in the current system",
       "Collaborated with senior developers on project implementations",
-      "Participated in client meetings to discuss requirements and provide updates",
-      "Scrum based development and agile methodologies",
-      "Improvement of existing code base system by 40% along with resolving 25+ bugs in the current system"
+      "Participated in client meetings to discuss requirements and providing updates",
+      "Scrum based development and agile methodologies"
     ],
-    tags: ["Typescript", "Python", "PostgreSQL", "Redis","Flask", "NestJS", "NodeJS", "Git and Github", "Docker", "AWS"]
+    tags: ["Typescript", "Python", "PostgreSQL", "Redis","Flask", "NestJS", "NodeJS", "GraphQL","Git and Github", "Docker", "AWS"]
   }
 ];
 

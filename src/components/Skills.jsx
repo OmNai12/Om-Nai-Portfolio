@@ -5,18 +5,25 @@ const skillsData = {
     { name: "JavaScript", image_path: "/assets/pl_lang_img/pl_js.png" },
     { name: "TypeScript", image_path: "/assets/pl_lang_img/pl_ts.png" },
   ],
+  "Web Development Frameworks and Libraries": [
+    { name: "React", image_path: "/assets/frameworks_img/fw_reactjs.png" },
+    { name: "Spring", image_path: "/assets/frameworks_img/fw_sw.png" },
+    { name: "Node.js", image_path: "/assets/frameworks_img/fw_nodejs.png" },
+    { name: "NestJS", image_path: "/assets/frameworks_img/fw_nestjs.png" },
+    { name: "ExpressJS", image_path: "/assets/frameworks_img/fw_expressjs.png" },
+  ],
   "Databases": [
     { name: "MongoDB", image_path: "/assets/databases_img/db_mongo.png" },
     { name: "OracleDB", image_path: "/assets/databases_img/db_oracle.webp" },
     { name: "MySQL", image_path: "/assets/databases_img/db_mysql.png" },
     { name: "PostgreSQL", image_path: "/assets/databases_img/db_postgresql.png" },
   ],
-  "Frameworks": [
-    { name: "React", image_path: "/assets/frameworks_img/fw_react.png" },
-    { name: "Node.js", image_path: "/assets/frameworks_img/fw_nodejs.png" },
-    { name: "NestJS", image_path: "/assets/frameworks_img/fw_nestjs.png" },
-    { name: "Express", image_path: "/assets/frameworks_img/fw_express.png" },
-  ]
+  "Machine Learning Frameworks and Libraries": [
+    { name: "Scikit-learn", image_path: "/assets/machine_learning_img/ms_sk.png" },
+    { name: "TensorFlow", image_path: "/assets/machine_learning_img/ms_tf.png" },
+    { name: "Pytorch", image_path: "/assets/machine_learning_img/ms_pt.png" },
+    { name: "OpenCV", image_path: "/assets/machine_learning_img/ms_ocv.jpg" },
+  ],
 };
 
 const SkillItem = ({ name, image_path }) => (
