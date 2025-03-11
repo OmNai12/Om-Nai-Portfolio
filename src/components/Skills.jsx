@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const skillsData = {
   "Programming Languages": [
     { name: "Python", image_path: "/assets/pl_lang_img/pl_py.png" },
@@ -34,8 +36,14 @@ const skillsData = {
 };
 
 const SkillItem = ({ name, image_path }) => (
-  <div className="flex items-center gap-4 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-    <div className="w-12 h-12 flex-shrink-0 rounded-full bg-gray-50 p-2 flex items-center justify-center overflow-hidden">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    className="flex items-center gap-6 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+  >
+    <div className="w-16 h-16 flex-shrink-0 rounded-xl bg-gray-50 p-3 flex items-center justify-center overflow-hidden">
       <img
         src={image_path}
         alt={name}
@@ -45,21 +53,27 @@ const SkillItem = ({ name, image_path }) => (
         }}
       />
     </div>
-    <span className="text-gray-700 font-medium">{name}</span>
-  </div>
+    <span className="text-gray-700 font-medium text-lg">{name}</span>
+  </motion.div>
 );
 
 const SkillCategory = ({ category, skills }) => (
-  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
-    <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-100">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300"
+  >
+    <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-3 border-b border-gray-100">
       {category}
     </h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {skills.map((skill, index) => (
         <SkillItem key={index} {...skill} />
       ))}
     </div>
-  </div>
+  </motion.div>
 );
 
 const Skills = () => {
@@ -67,7 +81,7 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-4 h-14 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Skills & Technologies
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -75,7 +89,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="max-w-7xl mx-auto space-y-8">
           {Object.entries(skillsData).map(([category, skills], index) => (
             <SkillCategory key={index} category={category} skills={skills} />
           ))}
