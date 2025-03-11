@@ -69,7 +69,7 @@ const Hero = () => {
         </h1>
         
         <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600 md:text-xl">
-          Turning ideas into elegant solutions through code. Specializing in creating beautiful and functional web applications.
+          Turning ideas into elegant solutions through code. Specializing in creating beautiful and functional software applications.
         </p>
         
         <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
