@@ -24,14 +24,21 @@ const skillsData = {
     { name: "Pytorch", image_path: "/assets/machine_learning_img/ms_pt.png" },
     { name: "OpenCV", image_path: "/assets/machine_learning_img/ms_ocv.jpg" },
   ],
+  "Some Other Tools": [
+    { name: "Git", image_path: "/assets/some_more_img/new_git.png" },
+    { name: "GitHub", image_path: "/assets/some_more_img/new_github.png" },
+    { name: "Docker", image_path: "/assets/some_more_img/new_docker.png" },
+    { name: "Hadoop", image_path: "/assets/some_more_img/new_hadoop.jpeg" },
+    { name: "Apache Spark", image_path: "/assets/some_more_img/new_a_spark.png" },
+  ],
 };
 
 const SkillItem = ({ name, image_path }) => (
   <div className="flex items-center gap-4 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
     <div className="w-12 h-12 flex-shrink-0 rounded-full bg-gray-50 p-2 flex items-center justify-center overflow-hidden">
-      <img 
-        src={image_path} 
-        alt={name} 
+      <img
+        src={image_path}
+        alt={name}
         className="w-full h-full object-contain"
         onError={(e) => {
           e.target.src = '/images/placeholder.png';
@@ -67,7 +74,7 @@ const Skills = () => {
             Technologies and tools I work with
           </p>
         </div>
-        
+
         <div className="space-y-8">
           {Object.entries(skillsData).map(([category, skills], index) => (
             <SkillCategory key={index} category={category} skills={skills} />
