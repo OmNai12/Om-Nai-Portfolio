@@ -39,10 +39,10 @@ const Hero = () => {
       <div className="max-w-4xl text-center">
         <h1 className="mb-6 text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl">
           Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Om Nai</span>
-          <span className="relative block mt-2">
-            <span className="block mt-1 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <span className="relative block mt-4">
+            <span className="block mt-1 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent min-h-[1.2em] leading-normal">
               {text}
-              <span className={`inline-block w-0.5 h-8 ml-1 bg-current animate-blink`}></span>
+              <span className={`inline-block w-0.5 h-[1.2em] ml-1 bg-current animate-blink align-middle`}></span>
             </span>
           </span>
         </h1>
