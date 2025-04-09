@@ -1,21 +1,21 @@
 import { motion } from 'framer-motion';
 
 const experienceData = [
-//   {
-//     role: "Software Development Engineer",
-//     company: "Hibki AI",
-//     location: "Fresno, California",
-//     type: "Research Assistant",
-//     period: "Jan 2024 - Present",
-//     description: "Working on cutting-edge AI solutions and research projects.",
-//     responsibilities: [
-//       "Developing and implementing machine learning models for computer vision applications",
-//       "Collaborating with research team on deep learning projects",
-//       "Building and optimizing neural network architectures",
-//       "Contributing to research papers and technical documentation"
-//     ],
-//     tags: ["Python", "TensorFlow", "PyTorch", "Computer Vision", "Deep Learning"]
-//   },
+  {
+    role: "Software Development Engineer",
+    company: "Hibki AI",
+    location: "Fresno, California",
+    type: "Research Assistant",
+    period: "Jan 2025 - Present",
+    description: "Working on cutting-edge AI solutions and research projects.",
+    responsibilities: [
+      "Architected and implemented an advanced AI system utilizing synthetic media technology to digitally preserve historical testimonies of Rev. Saburo Masada concerning Japanese internment during World War II",
+      "Spearheaded the integration and optimization of Large Language Models (LLMs) with Retrieval-Augmented Generation (RAG) frameworks, resulting in a 35% enhancement in response accuracy and contextual relevance",
+      "Executed comprehensive system optimization initiatives and implemented critical bug resolution strategies, yielding a measurable 57% improvement in overall platform performance",
+      "Collaborated with UX/UI specialists to refine frontend interface components, balancing minimalist design principles with interactive functionality to enhance user engagement metrics"
+    ],
+    tags: ["Python", "TensorFlow", "DeepFake","NLP", "Qdrant (Vector Database)", "React", "Git and Github"]
+  },
   {
     role: "Volunteer (Full Stack Developer)",
     company: "BAPS Swaminarayan Sanstha",
