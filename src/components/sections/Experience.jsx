@@ -1,69 +1,79 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar } from 'lucide-react';
-import { experience } from '../../utils/constants';
-import Card from '../ui/Card';
-import Badge from '../ui/Badge';
+import GlassCard from '../common/GlassCard';
 
-const ExperienceItem = ({ item, index }) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="relative pl-8 pb-12 border-l-2 border-gray-200 dark:border-gray-700 last:border-l-0"
-        >
-            <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-secondary border-4 border-white dark:border-dark-bg" />
+const ExperienceItem = ({ exp, index }) => (
+    <div className={`relative flex flex-col md:flex-row gap-8 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+        {/* Timeline Node */}
+        <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent)] rounded-full -translate-x-[5px] md:-translate-x-1/2 mt-6 z-10 shadow-[0_0_10px_var(--glow)]"></div>
 
-            <Card className="hover:!translate-y-0">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                        <h3 className="text-xl font-bold text-gray-800 dark:text-white flex items-center gap-2">
-                            <Briefcase className="text-secondary" size={24} />
-                            {item.role}
-                        </h3>
-                        <p className="text-lg text-secondary font-medium mt-1">{item.company}</p>
-                    </div>
-                    <div className="flex items-center text-gray-500 dark:text-gray-400 mt-2 md:mt-0 text-sm">
-                        <Calendar size={16} className="mr-2" />
-                        {item.duration}
-                    </div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                    {item.description}
+        {/* Date (Desktop) */}
+        <div className={`hidden md:block w-1/2 px-10 pt-4 text-[var(--text-secondary)] ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+            {exp.date}
+        </div>
+
+        {/* Content Card */}
+        <div className="md:w-1/2 pl-8 md:px-10">
+            <GlassCard
+                className="relative"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+            >
+                <div className="md:hidden text-sm text-[var(--text-accent)] mb-2">{exp.date}</div>
+                <h3 className="text-xl font-bold">{exp.role}</h3>
+                <p className="text-[var(--accent)] font-medium mb-2">{exp.company}</p>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    {exp.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                    {item.tech.map((tech) => (
-                        <Badge key={tech} variant="secondary">
-                            {tech}
-                        </Badge>
-                    ))}
-                </div>
-            </Card>
-        </motion.div>
-    );
-};
+            </GlassCard>
+        </div>
+    </div>
+);
 
 const Experience = () => {
+    const experiences = [
+        {
+            role: "Senior Frontend Engineer",
+            company: "TechNova Solutions",
+            date: "2023 - Present",
+            description: "Leading the migration of legacy monoliths to micro-frontends using React and Module Federation. Improved build times by 60% and established a new design system."
+        },
+        {
+            role: "Full Stack Developer",
+            company: "Creative Pulse Studio",
+            date: "2021 - 2023",
+            description: "Developed immersive web experiences for high-profile clients using WebGL and GSAP. Integrated AI-powered content generation tools into the internal CMS."
+        },
+        {
+            role: "Junior Web Developer",
+            company: "StartUp Inc.",
+            date: "2020 - 2021",
+            description: "Collaborated on the launch of a fintech dashboard. Optimized application performance and ensured WCAG 2.1 AA compliance."
+        }
+    ];
+
     return (
-        <section id="experience" className="py-20 bg-light-surface dark:bg-dark-surface transition-colors duration-300">
-            <div className="container mx-auto px-6">
+        <section className="py-20 px-6 relative">
+            <div className="max-w-5xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 dark:text-white mb-4">
-                        Experience
+                    <h2 className="text-4xl md:text-5xl font-clash font-bold mb-4">
+                        Career <span className="text-gradient">Timeline</span>
                     </h2>
-                    <div className="w-20 h-1 bg-secondary mx-auto rounded-full" />
                 </motion.div>
 
-                <div className="max-w-3xl mx-auto">
-                    {experience.map((item, index) => (
-                        <ExperienceItem key={item.id} item={item} index={index} />
+                <div className="relative space-y-12">
+                    {/* Vertical Line */}
+                    <div className="absolute left-0.5 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[var(--glass-border)] to-transparent -translate-x-1/2"></div>
+
+                    {experiences.map((exp, index) => (
+                        <ExperienceItem key={index} exp={exp} index={index} />
                     ))}
                 </div>
             </div>

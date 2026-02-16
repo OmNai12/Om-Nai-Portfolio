@@ -1,9 +1,89 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-light-bg text-gray-900 dark:bg-dark-bg dark:text-white transition-colors duration-300;
+  :root {
+    /* Light Mode Palette */
+    --bg-primary: #f8f8fc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #eeeef5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #555570;
+    --accent: #4338CA; /* Deep Indigo */
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glow: rgba(67, 56, 202, 0.2);
+    
+    /* Animation defaults */
+    --transition-speed: 0.3s;
   }
+
+  .dark {
+    /* Dark Mode Palette */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-tertiary: #1a1a2e;
+    --text-primary: #f0f0f5;
+    --text-secondary: #a0a0b5;
+    --accent: #4F46E5; /* Electric Blue/Indigo */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glow: rgba(79, 70, 229, 0.4);
+  }
+
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-500 font-satoshi selection:bg-[var(--accent)] selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-clash font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .glass-hover {
+    @apply transition-transform duration-300 ease-out;
+  }
+  
+  .glass-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 40px -10px var(--glow);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
